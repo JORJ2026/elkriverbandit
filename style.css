@@ -1,19 +1,5 @@
 
 :root{--bg:#0b0a1a}
-*{box-sizing:border-box}
-html,body{width:100%;height:100%;height:100dvh;margin:0;background:var(--bg);overflow:hidden}
-body{display:flex;align-items:center;justify-content:center;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent}
-.game{position:relative;width:min(100vw,calc(100dvh * 16 / 9));aspect-ratio:16/9;max-height:100dvh}
-canvas{display:block;width:100%;height:100%;image-rendering:auto}
-.touch-controls{position:absolute;inset:0;display:none;pointer-events:none}
-body.mobile-playing .touch-controls{display:block}
-.touch-button{position:absolute;bottom:max(16px,env(safe-area-inset-bottom));width:clamp(64px,10vh,88px);height:clamp(64px,10vh,88px);border:1px solid rgba(255,255,255,.4);border-radius:50%;background:rgba(10,12,32,.56);color:white;box-shadow:0 3px 14px #0005,inset 0 0 0 3px rgba(255,255,255,.08);font:700 25px/1 system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;touch-action:none;pointer-events:auto;padding:0}
-.touch-button span{font-size:10px;letter-spacing:.12em;font-weight:800}
-.touch-button:active{transform:scale(.94);background:rgba(255,210,63,.5)}
-.touch-button.jump{left:max(16px,env(safe-area-inset-left))}
-.touch-button.slide{left:calc(max(16px,env(safe-area-inset-left)) + clamp(72px,11vh,98px))}
-.touch-button.spin{right:max(20px,env(safe-area-inset-right));border-color:rgba(255,210,63,.75);color:#ffe28a}
-.rotate-hint{display:none}
-@media (orientation:portrait) and (max-width:700px){body{background:#090815}.game,.rotate-hint{display:none}.rotate-hint{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;color:#fff1be;font:700 16px system-ui,sans-serif;letter-spacing:.04em}.rotate-icon{font:400 56px/1 system-ui,sans-serif;color:#ffd23f}}
-@media (orientation:landscape) and (pointer:coarse){.game{width:min(100vw,calc(100dvh * 16 / 9));max-height:100dvh}.touch-button{bottom:max(12px,env(safe-area-inset-bottom))}}
-@media (prefers-reduced-motion:reduce){.touch-button:active{transform:none}}
+html,body{height:100%;margin:0;background:var(--bg);overflow:hidden}
+body{display:flex;align-items:center;justify-content:center;touch-action:none;user-select:none}
+canvas{width:100vw;max-height:100vh;aspect-ratio:16/9;max-width:calc(100vh*16/9);image-rendering:auto}

@@ -516,11 +516,7 @@ function draw(){if(S=='gallery'){drawGallery();return}M=LV[Math.min(lvl,NM-1)];i
  celebFX();
 }
 reset();P.alive=true;let last=performance.now();
-let mobileUiState='';
-document.querySelectorAll('.touch-button').forEach(button=>{
- button.addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();if(S!=='play')return;const action=button.dataset.action;if(action==='jump')jump();else if(action==='slide')slide();else if(action==='spin')spin()},{passive:false});
-});
 function loop(n){const dt=Math.min(.033,(n-last)/1000);last=n;
  if(S=='title'){dist+=120*dt;t+=dt;P.run+=dt*5;parts=[]}else update(dt);
- if(S=='title'){objs=[]}if(mobileUiState!==S){document.body.classList.toggle('mobile-playing',S==='play');mobileUiState=S}draw();requestAnimationFrame(loop)}
+ if(S=='title'){objs=[]}draw();requestAnimationFrame(loop)}
 requestAnimationFrame(loop);
