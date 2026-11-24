@@ -1,0 +1,12 @@
+{
+  "appId": "io.github.jorj2026.elkriverbandit",
+  "appName": "Elk River Bandit",
+  "webDir": "www",
+  "backgroundColor": "#0b0a1a",
+  "ios": {"contentInset": "never", "backgroundColor": "#0b0a1a", "limitsNavigationsToAppBoundDomains": false},
+  "android": {"backgroundColor": "#0b0a1a", "allowMixedContent": false},
+  "plugins": {
+    "SplashScreen": {"launchShowDuration": 1500, "launchAutoHide": true, "backgroundColor": "#0b0a1a", "showSpinner": false},
+    "StatusBar": {"style": "DARK", "backgroundColor": "#0b0a1a", "overlaysWebView": true}
+  }
+}

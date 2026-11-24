@@ -1,0 +1,57 @@
+{
+  "name": "elk-river-bandit",
+  "productName": "Elk River Bandit",
+  "version": "1.0.0",
+  "description": "Run, jump and spell your way down the river.",
+  "author": {"name": "JORJ2026", "email": "jorj2026@users.noreply.github.com"},
+  "homepage": "https://github.com/jorj2026/elk-river-bandit",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --publish never"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "io.github.jorj2026.elkriverbandit",
+    "productName": "Elk River Bandit",
+    "copyright": "© 2026 JORJ2026",
+    "directories": {"buildResources": "build", "output": "dist"},
+    "files": ["main.js", "preload.js", "www/**/*", "package.json"],
+    "compression": "normal",
+    "win": {
+      "target": [{"target": "nsis", "arch": ["x64"]}, {"target": "portable", "arch": ["x64"]}],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "artifactName": "Elk-River-Bandit-${version}-Windows-Setup.${ext}",
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "Elk River Bandit"
+    },
+    "portable": {"artifactName": "Elk-River-Bandit-${version}-Windows-Portable.${ext}"},
+    "mac": {
+      "target": [{"target": "dmg", "arch": ["universal"]}],
+      "category": "public.app-category.games",
+      "icon": "build/icon.icns",
+      "hardenedRuntime": false,
+      "gatekeeperAssess": false
+    },
+    "dmg": {"artifactName": "Elk-River-Bandit-${version}-macOS.${ext}", "title": "Elk River Bandit"},
+    "linux": {
+      "target": [{"target": "AppImage", "arch": ["x64"]}, {"target": "deb", "arch": ["x64"]}],
+      "category": "Game",
+      "icon": "build/icon.png",
+      "maintainer": "JORJ2026 <jorj2026@users.noreply.github.com>",
+      "synopsis": "Run, jump and spell your way down the river"
+    },
+    "appImage": {"artifactName": "Elk-River-Bandit-${version}-Linux.${ext}"},
+    "deb": {"artifactName": "Elk-River-Bandit-${version}-Linux.${ext}"}
+  }
+}
